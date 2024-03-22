@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato Disease Detection</title>
+    <style>
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #result {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        #remedies {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+        .back-to-dashboard {
+            margin-top: 20px;
+        }
+
+        #remedies h3 {
+            color: #4CAF50;
+        }
+
+        /* Center the username */
+        #username {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Tomato Disease Detection</h1>
+        <div id="username">
+            {% if user_full_name %}
+                <p>Welcome, <strong>{{ user_full_name }}</strong>!</p>
+            {% endif %}
+            <a href="/dashboard" style="display: inline-block; margin-top: 10px; padding: 10px 15px; text-decoration: none; background-color: #007bff; color: #fff; border-radius: 5px; font-weight: bold;">Back to Dashboard</a>
+
+        </div>
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+
+        <form action="/tomato_disease_detection" method="post" enctype="multipart/form-data">
+            <label for="file">Choose an image:</label>
+            <input type="file" name="file" id="file" accept=".jpg, .jpeg, .png, .gif" required>
+            <button type="submit">Upload and Detect Disease</button>
+        </form>
+
+        {% if filename %}
+            <div id="result">
+                <p>Uploaded Image: <strong>{{ filename }}</strong></p>
+                <p>Disease: <strong>{{ disease }}</strong></p>
+                <p>Confidence: <strong>{{ confidence }}</strong></p>
+                <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded Image">
+            </div>
+        {% endif %}
+
+        <div id="remedies">
+            <h3>Remedies:</h3>
+            <p style="font-family: 'Arial', sans-serif; font-size: 16px; color: #333; background-color: #f8f8f8; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                Here are some remedies for <strong style="color: #e44d26;">{{ disease }}</strong>:
+            </p>
+                {% for remedy in disease_remedies %}
+                    <p>{{ remedy }}</p>
+                {% endfor %}
+                <p>No specific remedies found for '{{ disease }}'</p>
+        </div>
+    </div>
+</body>
+</html>

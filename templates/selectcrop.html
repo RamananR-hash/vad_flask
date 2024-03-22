@@ -1,0 +1,137 @@
+<!-- select_crop.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Crop</title>
+    <!-- Add your CSS links and styling here if needed -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .crop-box {
+            text-align: center;
+            padding: 30px; /* Increased margin size here */
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .crop-box:hover {
+            transform: scale(1.05);
+        }
+
+        .crop-image {
+            max-width: 100%;
+            height: auto;
+            width: 200px; /* Adjust this width to make all images the same size */
+            height: 150px; /* Adjust this height to make all images the same size */
+        }
+
+        .crop-name {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .progress {
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        p{
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-header">
+            <h1>Select Crop</h1>
+            <div>
+                <p>Welcome, {{ user_full_name }}</p>
+                <a href="/dashboard" class="btn btn-primary">Back to Dashboard</a>
+                <a href="/logout" class="btn btn-danger">Logout</a>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="crop-box">
+                    <img class="crop-image" src="{{ url_for('static', filename='images/crop_images/tomato.jpg') }}" alt="Crop 1">
+                    <p class="crop-name">Tomato</p>
+                </div>
+                <p class="crop-name">Tomato</p>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="crop-box">
+                    <img class="crop-image" src="{{ url_for('static', filename='images/crop_images/onion.jpg') }}" alt="Crop 2">
+                    <p class="crop-name">Onion</p>
+                </div>
+                <p class="crop-name">Onion</p>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="crop-box">
+                    <img class="crop-image" src="{{ url_for('static', filename='images/crop_images/okra.jpg') }}" alt="Crop 3">
+                    <p class="crop-name">Okra</p>
+                </div>
+                <p class="crop-name">Okra</p>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="crop-box">
+                    <img class="crop-image" src="{{ url_for('static', filename='images/crop_images/carrot.jpg') }}" alt="Crop 4">
+                    <p class="crop-name">Carrot</p>
+                </div>
+                <p class="crop-name">Carrot</p>
+                <div class="progress">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="crop-box">
+                    <img class="crop-image" src="{{ url_for('static', filename='images/crop_images/potato.jpg') }}" alt="Crop 5">
+                    <p class="crop-name">Potato</p>
+                </div>
+                <p class="crop-name">Potato</p>
+                <div class="progress">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js links at the end of the body -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

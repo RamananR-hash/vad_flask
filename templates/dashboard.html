@@ -1,0 +1,127 @@
+<!-- Dashboard (`dashboard.html`) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .dashboard-images a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .dashboard-images a:hover {
+            transform: scale(1.05);
+        }
+
+        .dashboard-images img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        p{
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Media query for mobile view (max-width: 768px) */
+        @media (max-width: 768px) {
+            .dashboard-images {
+                grid-template-columns: 1fr; /* Stack images vertically */
+            }
+
+            .dashboard-images a {
+                width: 100%; /* Make image links full-width in mobile view */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-header">
+            <h1>Welcome to the Dashboard</h1>
+            <div>
+                <p>Welcome, {{ user_full_name }}</p>
+                <a href="/logout" class="btn btn-danger">Logout</a>
+            </div>
+        </div>
+        <div class="dashboard-images">
+            <!-- Image links to different pages -->
+            <a href="/weather">
+                <img src="{{ url_for('static', filename='images/mainpage_img/weather_image.jpg') }}" alt="weather">
+                <p>Weather Prediction</p>
+            </a>
+            <a href="/soil_info">
+                <img src="{{ url_for('static', filename='images/mainpage_img/ph_value.jpeg') }}" alt="Soil Info">
+                <p>Soil Info</p>
+            </a>
+            <a href="/select_crop">
+                <img src="{{ url_for('static', filename='images/mainpage_img/crop_image.jpg') }}" alt="Select Crop">
+                <p>Select Crop</p>
+            </a>
+            <a href="/affected_crop">
+                <img src="{{ url_for('static', filename='images/mainpage_img/affected_crop_image.jpg') }}" alt="Affected Crop">
+                <p>Affected Crop</p>
+            </a>
+            <a href="/buyers_details">
+                <img src="{{ url_for('static', filename='images/mainpage_img/farmer_buyer.jpg') }}" alt="Buyers Details">
+                <p>Buyers Details</p>
+            </a>
+            <a href="/machine_requirements">
+                <img src="{{ url_for('static', filename='images/mainpage_img/machinery.jpg') }}" alt="Machine Requirements">
+                <p>Machine Requirements</p>
+            </a>
+            <a href="/tomato_disease_detection">
+                <img src="{{ url_for('static', filename='images/mainpage_img/tomato_image.jpg') }}" alt="Tomato Disease Detection">
+                <p>Tomato Disease Detection</p>
+            </a>
+            <!-- <a href="/nearby_farmers"><img src="{{ url_for('static', filename='src/images/farmers_image.jpg') }}" alt="Nearby Farmers"></a> -->
+        </div>
+        <!-- Add any additional content you want on the dashboard here -->
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js links at the end of the body -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

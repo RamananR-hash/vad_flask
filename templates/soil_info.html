@@ -1,0 +1,170 @@
+<!-- Soil Info Page (`soil_info.html`) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add JustGage library CSS and JS links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justgage@1.4.0/dist/justgage.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/raphael@2.1.4/raphael.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/justgage@1.4.0/dist/justgage.min.js"></script>
+
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+    
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+    
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    
+        .gauge-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Increase the min width for larger gauges */
+            gap: 20px;
+            justify-items: center;
+        }
+    
+        .gauge {
+            width: 100%; /* Adjust the width as needed for responsiveness */
+            max-width: 700px; /* Set a maximum width for larger screens */
+            height: auto;
+            margin-bottom: 20px;
+        }
+    
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        p{
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    
+        .back-to-dashboard {
+            margin-top: 20px;
+        }
+    
+        .images-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        
+        .soil-image {
+            max-width: 100%; /* Ensure images are responsive */
+            height: auto;
+            max-height: 150px; /* Set a maximum height for consistency */
+            margin-right: 20px; /* Add margin between images */
+            border: 2px solid #ddd; /* Add a border for better visibility */
+            border-radius: 8px; /* Add a border-radius for a rounded appearance */
+            transition: transform 0.2s;
+        }
+
+        .soil-image:hover {
+            transform: scale(1.1); /* Add a slight scale effect on hover */
+        }
+    
+        /* Media query for mobile view (max-width: 768px) */
+        @media (max-width: 768px) {
+            .gauge-container {
+                grid-template-columns: 1fr; /* Stack gauges vertically */
+            }
+    
+            .gauge {
+                width: 100%; /* Make gauges full-width in mobile view */
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-header">
+            <h1>Soil Information</h1>
+            <div >
+                <p>Welcome, {{ user_full_name }}</p>
+                <a href="/dashboard" class="btn btn-primary back-to-dashboard">Back to Dashboard</a>
+            </div>
+        </div>
+        <div class="images-container">
+            <img src="/static/images/Soil_info/npk_veg.png" alt="Soil Image 1" class="soil-image">
+            <img src="/static/images/Soil_info/ph_veg.png" alt="Soil Image 2" class="soil-image">
+        </div>
+        <div class="gauge-container">
+            <!-- pH Gauge -->
+            <div class="gauge" id="phGauge"></div>
+            
+            <!-- Nitrogen (N) Gauge -->
+            <div class="gauge" id="nGauge"></div>
+            
+            <!-- Phosphorus (P) Gauge -->
+            <div class="gauge" id="pGauge"></div>
+            
+            <!-- Potassium (K) Gauge -->
+            <div class="gauge" id="kGauge"></div>
+        </div>
+
+        <!-- Add any additional content you want on the soil info page here -->
+
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js links at the end of the body -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Initialize pH Gauge
+        var phGauge = new JustGage({
+            id: "phGauge",
+            value: 6.5, // Sample pH value
+            min: 0,
+            max: 14,
+            title: "pH Level",
+            label: "pH"
+        });
+
+        // Initialize Nitrogen (N) Gauge
+        var nGauge = new JustGage({
+            id: "nGauge",
+            value: 30, // Sample N value
+            min: 0,
+            max: 100,
+            title: "Nitrogen Level",
+            label: "N"
+        });
+
+        // Initialize Phosphorus (P) Gauge
+        var pGauge = new JustGage({
+            id: "pGauge",
+            value: 15, // Sample P value
+            min: 0,
+            max: 100,
+            title: "Phosphorus Level",
+            label: "P"
+        });
+
+        // Initialize Potassium (K) Gauge
+        var kGauge = new JustGage({
+            id: "kGauge",
+            value: 50, // Sample K value
+            min: 0,
+            max: 100,
+            title: "Potassium Level",
+            label: "K"
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+
+
+<!-- Machine Requirements Page (`machine_requirements.html`) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .machine-image {
+            max-width: 100px; /* Set a maximum width for the images */
+            height: auto;
+        }
+
+        /* Responsive styling for tablets and larger screens */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px;
+            }
+        }
+
+        /* Responsive styling for laptops and larger screens */
+        @media (min-width: 992px) {
+            .container {
+                max-width: 992px;
+            }
+        }
+
+        /* Responsive styling for desktops and larger screens */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="username">
+            <!-- Display the Flask username -->
+            <p>Welcome, {{ user_full_name }}</p>
+            <a href="/dashboard" class="btn btn-primary">Back to Dashboard</a>
+        </div>
+        <h1>Machine Requirements</h1>
+        <!-- Add content related to Machine Requirements here -->
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Machine Name</th>
+                    <th>Type</th>
+                    <th>Model</th>
+                    <th>Image</th>
+                    <th>Rent Person Name</th>
+                    <th>Contact Number</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample machine requirements (10 rows) -->
+                <tr>
+                    <td>Tractor</td>
+                    <td>Harvesting</td>
+                    <td>ABC-2000</td>
+                    <td><img src="/static/images/Machines/tractor.jpeg" alt="Tractor Image" class="machine-image"></td>
+                    <td>John Doe</td>
+                    <td>+1234567890</td>
+                    <td>chennai</td>
+                </tr>
+                <tr>
+                    <td>Seed Drill</td>
+                    <td>Seeding</td>
+                    <td>XYZ-500</td>
+                    <td><img src="/static/images/Machines/seed_drill.jpg" alt="Seed Drill Image" class="machine-image"></td>
+                    <td>Jane Smith</td>
+                    <td>+9876543210</td>
+                    <td>madurai</td>
+                </tr>
+                <tr>
+                    <td>Cultivator</td>
+                    <td>Soil Preparation</td>
+                    <td>DEF-300</td>
+                    <td><img src="/static/images/Machines/Cultivator.png" alt="Seed Drill Image" class="machine-image"></td>
+                    <td>Bob Johnson</td>
+                    <td>+3456789012</td>
+                    <td>coimbatore</td>
+                </tr>
+                <tr>
+                    <td>Plow</td>
+                    <td>Plowing</td>
+                    <td>GHI-100</td>
+                    <td><img src="/static/images/Machines/plow.jpg" alt="Seed Drill Image" class="machine-image"></td>
+                    <td>Alice Brown</td>
+                    <td>+7890123456</td>
+                    <td>kumbakonam</td>
+                </tr>
+                <tr>
+                    <td>Harvester</td>
+                    <td>Crop Harvesting</td>
+                    <td>JKL-700</td>
+                    <td><img src="/static/images/Machines/4wheelharverster.jpg" alt="Seed Drill Image" class="machine-image"></td>
+                    <td>Charlie Wilson</td>
+                    <td>+2345678901</td>
+                    <td>thanjavur</td>
+                </tr>
+                <tr>
+                    <td>Water Pump</td>
+                    <td>Irrigation</td>
+                    <td>MNO-50</td>
+                    <td><img src="/static/images/Machines/water_pump.jpg" alt="Seed Drill Image" class="machine-image"></td>
+                    <td>Eva Davis</td>
+                    <td>+8765432109</td>
+                    <td>cholapuram</td>
+                </tr>
+                <tr>
+                    <td>Sprayer</td>
+                    <td>Pesticide Application</td>
+                    <td>PQR-120</td>
+                    <td><img src="/static/images/Machines/sprayer.jpg" alt="Seed Drill Image" class="machine-image"></td>
+                    <td>David Miller</td>
+                    <td>+1098765432</td>
+                    <td>jayangondam</td>
+                </tr>
+                <tr>
+                    <td>Planter</td>
+                    <td>Seed Planting</td>
+                    <td>STU-250</td>
+                    <td><img src="/static/images/Machines/planter.jpg" alt="Seed Drill Image" class="machine-image"></td>
+                    <td>Susan White</td>
+                    <td>+4321098765</td>
+                    <td>kanyakumari</td>
+                </tr>
+                <tr>
+                    <td>Fertilizer Spreader</td>
+                    <td>Fertilizer Application</td>
+                    <td>VWX-80</td>
+                    <td><img src="/static/images/Machines/fertilizer_spreader.jpg" alt="Seed Drill Image" class="machine-image"></td>
+                    <td>Fred Taylor</td>
+                    <td>+6543210987</td>
+                    <td>thiruvarur</td>
+                </tr>
+                <tr>
+                    <td>Rice Transplanter</td>
+                    <td>Rice Planting</td>
+                    <td>YZA-160</td>
+                    <td><img src="/static/images/Machines/rice_transplanter.png" alt="Seed Drill Image" class="machine-image"></td>
+                    <td>Gloria Martin</td>
+                    <td>+3210987654</td>
+                    <td>namakkal</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+
+        <!-- Back to Dashboard button -->
+       
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js links at the end of the body -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

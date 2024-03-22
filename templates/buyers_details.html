@@ -1,0 +1,100 @@
+<!-- Buyers Details Page (`buyers_details.html`) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyers Details</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .username {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        .rating {
+            color: gold;
+        }
+        /* Add any additional styling specific to the Buyers Details page */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="username">
+            <!-- Display the Flask username -->
+            <p>Welcome, {{ user_full_name }}</p>
+            <!-- Back to Dashboard button -->
+        <a href="/dashboard" class="btn btn-primary">Back to Dashboard</a>
+        </div>
+        <h1>Buyers Details</h1>
+        <!-- Sample content for Buyers Details -->
+        <p>Explore the list of potential buyers interested in your crops:</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Buyer Name</th>
+                    <th>Contact Information</th>
+                    <th>Crop Preferences</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample buyer details -->
+                <tr>
+                    <td>Selva Kumar</td>
+                    <td>Email: Selva@example.com<br>Phone: +1234567890</td>
+                    <td>Interested in Wheat and Corn</td>
+                    <td><span class="rating">★★★★☆</span></td>
+                </tr>
+                <tr>
+                    <td>Rajesh</td>
+                    <td>Email: raj@example.com<br>Phone: +9876543210</td>
+                    <td>Interested in Tomatoes and Peppers</td>
+                    <td><span class="rating">★★★★★</span></td>
+                </tr>
+                <tr>
+                    <td>Ram Kumar</td>
+                    <td>Email: ram@example.com<br>Phone: +1234567890</td>
+                    <td>Interested in Wheat and Corn</td>
+                    <td><span class="rating">★★★☆☆</span></td>
+                </tr>
+                <tr>
+                    <td>Mathi</td>
+                    <td>Email: mathi@example.com<br>Phone: +9876543210</td>
+                    <td>Interested in Tomatoes and Peppers</td>
+                    <td><span class="rating">★★☆☆☆</span></td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+        
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js links at the end of the body -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

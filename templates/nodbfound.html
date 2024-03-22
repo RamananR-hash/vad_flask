@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error: Invalid Username</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .error-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .error-heading {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f44336;
+        }
+
+        .error-message {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .back-to-login {
+            margin-top: 20px;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            background-color: #2196F3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-heading">Invalid Username</div>
+        <div class="error-message">
+            The username you entered is invalid or does not exist in our database.
+        </div>
+        <div class="back-to-login">
+            <a href="/login" class="back-button">Back to Login</a>
+        </div>
+    </div>
+</body>
+</html>
